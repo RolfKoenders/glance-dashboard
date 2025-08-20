@@ -1,0 +1,87 @@
+- name: Home
+  #hide-desktop-navigation: true
+  columns:
+    - size: small
+      widgets:
+        - type: calendar
+          first-day-of-week: monday
+
+        - type: rss
+          limit: 10
+          collapse-after: 3
+          cache: 12h
+          feeds:
+            - url: https://selfh.st/rss/
+              title: selfh.st
+
+        - type: monitor
+          title: Monitor
+          cache: 5m
+          sites:
+            - title: Keeply
+              url: https://app.keeply.tools
+              icon: /assets/keeply-logo.png
+            - title: AUR
+              url: https://aur.archlinux.org
+              icon: si:archlinux
+
+    - size: full
+      widgets:
+        - type: group
+          widgets:
+            - type: hacker-news
+            - type: lobsters
+
+        - type: videos
+          channels:
+            - UCUyeluBRhGPCW4rPe_UvBZQ # ThePrimeTimeagen
+            - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
+            - UCsBjURrPoezykLs9EqgamOA # Fireship
+            - UCg6gPGh8HU2U01vaFCAsvmQ # Chris
+            - UC0sUzmZ0CHvVCVrpRfGKZfw # ML4W
+
+        - type: group
+          widgets:
+            - type: reddit
+              subreddit: homeassistant
+              show-thumbnails: true
+            - type: reddit
+              subreddit: selfhosted
+              show-thumbnails: true
+            - type: reddit
+              subreddit: framework
+              show-thumbnails: true
+            - type: reddit
+              subreddit: archlinux
+              show-thumbnails: true
+            - type: reddit
+              subreddit: node
+              show-thumbnails: true
+
+    - size: small
+      widgets:
+        - type: weather
+          location: Huizen, The Netherlands
+          units: metric # alternatively "imperial"
+          hour-format: 24h # alternatively "24h"
+          hide-location: true
+
+        - type: to-do
+
+        - type: twitch-channels
+          channels:
+            - frogcrafting
+            - theprimeagen
+            - theo
+            - summit1g
+            - valorant
+
+        - type: releases
+          cache: 1d
+          # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+          # read-only token from your Github account settings and use it here to increase the limit.
+          # token: ...
+          repositories:
+            - glanceapp/glance
+            - basecamp/omarchy
+            - vicinaehq/vicinae
